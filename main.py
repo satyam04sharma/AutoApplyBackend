@@ -15,6 +15,8 @@ from src.linkedIn_authenticator import LinkedInAuthenticator
 from src.linkedIn_bot_facade import LinkedInBotFacade
 from src.linkedIn_job_manager import LinkedInJobManager
 from src.job_application_profile import JobApplicationProfile
+# For API calls
+from api.app import app
 
 # Suppress stderr
 sys.stderr = open(os.devnull, 'w')
@@ -220,4 +222,6 @@ def main(resume: Path = None):
         print("Refer to the general troubleshooting guide: https://github.com/feder-cr/LinkedIn_AIHawk_automatic_job_application/blob/main/readme.md#configuration")
 
 if __name__ == "__main__":
-    main()
+    # main() # Uncomment this line to run the script
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

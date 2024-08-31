@@ -1,0 +1,14 @@
+POST /apply: Handles job applications. This API can accept the job details and resume (if not using dynamic resume generation) as request body.
+GET /applications: Returns a list of all job applications submitted.
+GET /applications/{application_id}: Returns the details of a specific job application.
+
+
+Config File APIs
+GET /config: Returns the current configuration settings (e.g., secrets.yaml, config.yaml, plain_text_resume.yaml).
+POST /config: Updates the configuration settings. This API can accept the updated config files as request body.
+GET /config/secrets: Returns the secrets.yaml file contents.
+POST /config/secrets: Updates the secrets.yaml file contents.
+GET /config/config: Returns the config.yaml file contents.
+POST /config/config: Updates the config.yaml file contents.
+GET /config/plain_text_resume: Returns the plain_text_resume.yaml file contents.
+POST /config/plain_text_resume: Updates the plain_text_resume.yaml file contents.
